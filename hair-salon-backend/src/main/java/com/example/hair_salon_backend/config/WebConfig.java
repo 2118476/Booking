@@ -15,18 +15,22 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000", "http://localhost:3001", "http://localhost:3002",
-                                "http://localhost:3003")
+                        .allowedOrigins("http://localhost:3000", "http://localhost:3001",
+                                "http://localhost:3002", "http://localhost:3003",
+                                "https://66c228918a7716000891ec9b--wondrous-kleicha-4546da.netlify.app") // Add your
+                                                                                                         // Netlify
+                                                                                                         // domain
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
         };
     }
+
     @Override
-public void addResourceHandlers(@SuppressWarnings("null") ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/uploads/**")
-            .addResourceLocations("file:src/main/resources/static/uploads/");
-}
+    public void addResourceHandlers(@SuppressWarnings("null") ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("file:src/main/resources/static/uploads/");
+    }
 
 }
