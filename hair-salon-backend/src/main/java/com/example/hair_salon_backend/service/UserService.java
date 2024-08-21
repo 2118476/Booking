@@ -102,5 +102,9 @@ public class UserService {
             throw new RuntimeException("User is not an admin");
         }
     }
+
+    public boolean hasAdmin() {
+        return userRepository.findByRole(Role.ADMIN).isPresent();
+    }
     
 }

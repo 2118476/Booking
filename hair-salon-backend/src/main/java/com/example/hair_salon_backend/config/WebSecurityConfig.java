@@ -26,8 +26,7 @@ public class WebSecurityConfig {
         http
             .csrf().disable() 
             .authorizeHttpRequests()
-                .requestMatchers("/api/auth/register", "/api/auth/login", "/api/auth/reset-password", "/api/auth/forgot-password", "/api/auth/me").permitAll()
-                .requestMatchers("/images/**", "/static/**", "/uploads/**").permitAll()  // Ensure this is correct and avoid duplications
+                .requestMatchers("/api/auth/register","/create-admin", "/api/auth/login", "/api/auth/reset-password", "/api/auth/forgot-password", "/api/auth/me").permitAll()
                 .requestMatchers("/api/users").hasAuthority("ROLE_ADMIN") 
                 .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN") 
                 .requestMatchers("/api/moderator/**").hasAuthority("ROLE_MODERATOR")
