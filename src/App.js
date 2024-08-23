@@ -16,6 +16,8 @@ import AdminUserManagement from './components/AdminUserManagement';
 import Moderator from './components/Moderator';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar'; // Import Navbar component
+import CreateAdmin from './components/CreateAdmin';
+
 import './styles.css';
 
 
@@ -45,6 +47,7 @@ function App() {
                     <Route path="/forgot-password" element={<ForgotPassword />} />
                     <Route path="/reset-password" element={<ResetPassword />} />
                     <Route path="/services" element={<ServiceList />} />
+                    <Route path="/create-admin" element={<CreateAdmin />} />
                     <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'MODERATOR']} />}>
                         <Route path="/secure-data" element={<SecureData />} />
                     </Route>
