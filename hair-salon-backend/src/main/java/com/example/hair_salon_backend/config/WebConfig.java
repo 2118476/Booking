@@ -14,9 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000", "http://localhost:3001",
-                                "http://localhost:3002", "https://hair-salon-booking-da2658e241f8.herokuapp.com/",
-                                "https://66c228918a7716000891ec9b--wondrous-kleicha-4546da.netlify.app") // Add your
+                        .allowedOrigins("http://localhost:3000","https://hair-salon-booking-da2658e241f8.herokuapp.com/") // Add your
                                                                                                          // Netlify
                                                                                                          // domain
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
